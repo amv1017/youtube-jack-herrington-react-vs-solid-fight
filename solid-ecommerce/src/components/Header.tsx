@@ -30,7 +30,7 @@ export const Header: Component<{
       </div>
       <div class="px-10 py-2 justify-end has-tooltip">
         <span class="tooltip cart">
-          <div>Cart ({(cart ?? []).length})</div>
+          <div>Cart ({cart().length})</div>
           <For
             each={cart()}
           >
@@ -64,7 +64,7 @@ export const Header: Component<{
           </div>
         </span>
         <i class="fas fa-shopping-cart mr-2"></i>
-        <span class="font-bold text-xl">{(cart ?? []).length}</span>
+        <span class="font-bold text-xl">{cart().length}</span>
       </div>
     </div>
   );
