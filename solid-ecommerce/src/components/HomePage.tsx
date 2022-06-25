@@ -1,12 +1,9 @@
-import { Component, createMemo, For } from "solid-js";
-import { Link } from "solid-app-router";
-import type { Product } from "../product";
+import { Component, createMemo, For } from "solid-js"
+import { Link } from "solid-app-router"
+import type { Product } from "../product"
+import { products, onAddToCart, search } from "../store"
 
-export const HomePage: Component<{
-  products: () => Product[];
-  onAddToCart: (product: Product) => void;
-  search: () => string;
-}> = ({ products, onAddToCart, search }) => {
+export const HomePage: Component = () => {
   const filteredProducts = createMemo(
     () =>
       products().filter(
